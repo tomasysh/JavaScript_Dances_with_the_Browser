@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unit 1 練習：選取與修改</title>
+    <style>
+      .highlight {
+        color: #e67e22;
+        font-weight: bold;
+        border-bottom: 2px solid #e67e22;
+      }
+      .hidden {
+        display: none;
+      }
+      .product-card {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin: 10px 0;
+      }
+    </style>
+    <!-- 任務：請確認 script 載入時機是否正確 -->
+    <script src="3.js" defer></script>
+  </head>
+  <body>
+    <h1 id="page-title">原始店舖名稱</h1>
+
+    <div class="product-card" id="main-product">
+      <h2 class="product-name">商品名稱待定</h2>
+      <p class="status">目前狀態：未載入</p>
+      <button id="toggle-style">切換高亮樣式</button>
+    </div>
+
+    <div class="tip">
+      <p>練習提示：開啟 console，觀察 querySelector 的結果。</p>
+    </div>
+  </body>
+</html>
