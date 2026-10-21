@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>夏日精選商城｜加入購物車互動練習</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family:
+          "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+        color: #25332e;
+        background: #f4f7f2;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        padding: 64px 24px;
+        background:
+          radial-gradient(
+            ellipse at 12% 8%,
+            rgb(199 224 203 / 52%),
+            transparent 34rem
+          ),
+          #f4f7f2;
+      }
+
+      .container {
+        width: min(100%, 760px);
+        margin: 0 auto;
+        padding: 40px;
+        border: 1px solid #e4ebe3;
+        border-radius: 24px;
+        background: rgb(255 255 255 / 92%);
+        box-shadow: 0 20px 55px rgb(40 67 52 / 9%);
+      }
+
+      #main-title {
+        margin: 0 0 10px;
+        color: #244b3b;
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+        letter-spacing: 0.04em;
+      }
+
+      .exercise-note {
+        margin: 0 0 28px;
+        color: #697970;
+        line-height: 1.7;
+      }
+
+      .exercise-note code {
+        padding: 2px 6px;
+        border-radius: 5px;
+        background: #edf3ed;
+        color: #315b45;
+        font-size: 0.92em;
+      }
+
+      .product-list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .product-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 82px;
+        padding: 16px 18px;
+        border: 1px solid #e7ece7;
+        border-radius: 16px;
+        background: #fff;
+        transition:
+          border-color 160ms ease,
+          box-shadow 160ms ease,
+          transform 160ms ease;
+      }
+
+      .product-item:hover {
+        transform: translateY(-2px);
+        border-color: #c7d9cc;
+        box-shadow: 0 9px 22px rgb(40 67 52 / 8%);
+      }
+
+      .name {
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      .tag-sale {
+        flex: 0 0 auto;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: #fff0e8;
+        color: #b54f2e;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .btn-add {
+        flex: 0 0 auto;
+        margin-left: auto;
+        padding: 10px 16px;
+        border: 0;
+        border-radius: 10px;
+        background: #2f6b50;
+        color: #fff;
+        font: inherit;
+        font-size: 0.9rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          background-color 160ms ease,
+          transform 160ms ease;
+      }
+
+      .btn-add:hover {
+        transform: translateY(-1px);
+        background: #24573f;
+      }
+
+      .btn-success {
+        background: #16804a;
+        box-shadow: 0 0 0 3px rgb(22 128 74 / 16%);
+      }
+
+      .btn-add.btn-success:hover {
+        background: #12683d;
+      }
+
+      .btn-add:focus-visible {
+        outline: 3px solid #98c5a6;
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 560px) {
+        body {
+          padding: 28px 16px;
+        }
+
+        .container {
+          padding: 26px 18px;
+          border-radius: 20px;
+        }
+
+        .product-item {
+          flex-wrap: wrap;
+          gap: 10px;
+          padding: 15px;
+        }
+
+        .name {
+          flex: 1 1 auto;
+        }
+
+        .btn-add {
+          flex-basis: 100%;
+          margin-left: 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="main-title">夏日精選商城</h1>
+      <p class="exercise-note">
+        本練習使用 <code>querySelector()</code>，只會操作第一個「加入購物車」按鈕。
+      </p>
+
+      <ul class="product-list">
+        <li class="product-item" data-price="1200">
+          <span class="name">高級咖啡機</span>
+          <span class="tag-sale">特價中</span>
+          <button class="btn-add add-to-cart-btn">加入購物車</button>
+        </li>
+        <li class="product-item" data-price="350">
+          <span class="name">手沖濾紙</span>
+          <button class="btn-add add-to-cart-btn">加入購物車</button>
+        </li>
+        <li class="product-item" data-price="800">
+          <span class="name">不鏽鋼隨行杯</span>
+          <span class="tag-sale">熱銷</span>
+          <button class="btn-add add-to-cart-btn">加入購物車</button>
+        </li>
+      </ul>
+    </div>
+    <!-- 建議放置位置：body 底部 -->
+    <script src="2.js" defer></script>
+  </body>
+</html>
