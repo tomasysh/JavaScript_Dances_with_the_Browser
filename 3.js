@@ -1,11 +1,21 @@
-// --- 任務 1：選取元素 ---
-// 1.1 使用 ID 選取器選取 h1 標題，存入變數 title
-// 1.2 使用類別選取器選取商品名稱 h2，存入變數 name
+// 任務 1：選取元素
+const title = document.querySelector("#page-title");
+const name = document.querySelector(".product-name");
+const statusText = document.querySelector(".status");
+const toggleBtn = document.querySelector("#toggle-style");
 
-// --- 任務 2：修改內容 ---
-// 2.1 將 title 的文字改為「精品咖啡店」
-// 2.2 將 name 的文字改為「衣索比亞 耶加雪菲」
+// 任務 2：修改內容
+if (title && name) {
+  title.textContent = "精品咖啡店";
+  name.textContent = "衣索比亞 耶加雪菲";
+  statusText.textContent = "目前狀態：已更新資料";
+}
 
-// --- 任務 3：樣式操作 ---
-// 3.1 選取按鈕元素 (id: toggle-style)
-// 3.2 嘗試在按鈕點擊前，手動為 name 加入 'highlight' class
+// 任務 3：樣式操作 (基礎版)
+// 先手動加上樣式看看效果
+name.classList.add("highlight");
+
+// 進階嘗試：classList.toggle (這會銜接到 Topic 3 的事件處理)
+// toggleBtn.addEventListener('click', () => {
+//   name.classList.toggle('highlight');
+// });
